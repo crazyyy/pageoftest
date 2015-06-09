@@ -205,8 +205,9 @@
     .services {
       width: 80%;
       min-width: 320px;
+      height: 1820px;
       margin: 0 auto;
-height: 1820px;
+
       background-image: url(../images/bg/our-services-340.png);
       background-repeat: no-repeat;
       background-position: center top;
@@ -266,8 +267,8 @@ height: 1820px;
           right: 1%;
           left: auto;
           &:before {
-            left: auto;
             right: 105px;
+            left: auto;
           }
           .image-block {
             float: right;

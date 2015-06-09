@@ -830,78 +830,6 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 
 <script type="text/javascript" src="js/all-scripts.js"></script>
 
-
-
-<script src="js/jquery.sequence-min.js"></script>
-<script src="js/sequencejs-options.js"></script>
-<script type="text/javascript" src="js/jquery.retina.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARtSxnZ7mGTVHdIpurS_H64cr2b4CilfA&amp;sensor=false&amp;callback=initialize"></script>-->
-<!--<script type="text/javascript">-->
-  <!--function initialize() {-->
-    <!--var myLocation = new google.maps.LatLng(-12.037087, -77.044104);-->
-    <!--var mapOptions = {-->
-      <!--center: myLocation,-->
-      <!--zoom: 16,-->
-      <!--scrollwheel: true-->
-    <!--};-->
-    <!--var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);-->
-    <!--var iconUrl = 'images/mapicon.png';-->
-    <!--var marker = new google.maps.Marker({-->
-      <!--position: myLocation,-->
-      <!--map: map,-->
-      <!--icon: iconUrl,-->
-      <!--title: "skyes Theme",-->
-      <!--draggable: false,-->
-      <!--animation: google.maps.Animation.DROP-->
-    <!--});-->
-  <!--}-->
-  <!--google.maps.event.addDomListener(window, 'load', initialize);-->
-<!--</script>-->
-<script src="js/etimer.js"></script>
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    jQuery(".eTimer").eTimer({
-      etType: 0,
-      etDate: generationDateStr(),
-      etTitleText: "До конца акции осталось:",
-      etTitleSize: 18,
-      etShowSign: 1,
-      etSep: " ",
-      etFontFamily: "Trebuchet MS",
-      etTextColor: "black",
-      etPaddingTB: 15,
-      etPaddingLR: 13,
-      etBackground: "transparent",
-      etBorderSize: 0,
-      etBorderRadius: 0,
-      etBorderColor: "black",
-      etShadow: " 0px 0px 0px 0px #333333",
-      etLastUnit: 3,
-      etNumberFontFamily: "Trebuchet MS",
-      etNumberSize: 28,
-      etNumberColor: "black",
-      etNumberPaddingTB: 5,
-      etNumberPaddingLR: 6,
-      etNumberBackground: "transparent",
-      etNumberBorderSize: 0,
-      etNumberBorderRadius: 5,
-      etNumberBorderColor: "transparent",
-      etNumberShadow: "inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5)"
-    });
-  });
-  function generationDateStr() {
-    var nowDate = new Date();
-    nowDate.setDate(nowDate.getDate() + 2);
-
-    return nowDate.getDate() + '.' + parseInt(nowDate.getMonth() + 1) + '.' + nowDate.getFullYear() + '.' + parseInt(getRandomTime(23, 1)) + '.' + parseInt(getRandomTime(60, 1));
-
-  }
-  function getRandomTime(max, min) {
-    return Math.random() * (max - min) + min;
-  }
-</script>
-
 <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js"></script>
 <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
@@ -909,8 +837,6 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 
 <script type="text/javascript">
   $(document).ready(function () {
-
-
     $(".fancybox").fancybox({
       helpers: {
         overlay: {
@@ -918,10 +844,6 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
         }
       }
     });
-
-    /*$(".fancy").click(function(){
-     $(this).parent().fancybox.close();
-     });*/
   });
 </script>
 </body>
