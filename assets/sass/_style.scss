@@ -1228,8 +1228,6 @@ ul.pricing li {
   z-index: 10;
 
   width: 100%;
-  /*background-color: #fff;*/
-  /*border-bottom: 1px solid #d9dee1;*/
   height: 285px;
   margin: 0 auto;
 }
@@ -1240,12 +1238,10 @@ ul.pricing li {
   cursor: pointer;
   transition: all .2s linear 0s;
   transform: scale(1.01);
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
 
   animation-fill-mode: forwards;
-  /*border-bottom: 5px solid #21C2F8;*/
 }
 
 .price-table:hover {

@@ -7,3 +7,143 @@
 @import '_fancybox.scss';
 @import '_jquery.fancybox-buttons.scss';
 @import '_jquery.fancybox-thumbs.scss';
+
+.our-services {
+  height: 1390px;
+  padding: 50px 50px 0;
+
+  background-image: url(../images/bg/our-services.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  .section_title {
+    h2 {
+      font-size: 45px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+  .services {
+    position: relative;
+
+    width: 1110px;
+    height: 1160px;
+    margin: 0 auto;
+
+    background-image: url(../images/bg/our-services-logo.png);
+    background-repeat: no-repeat;
+    background-position: 50px 175px;
+    .text-block {
+      h3,
+      p {
+        font-size: 13px;
+      }
+    }
+    li {
+      position: absolute;
+
+      width: 220px;
+      padding: 0;
+      .image-block {
+        width: 215px;
+        height: 215px;
+        margin: 0 auto;
+
+        border-radius: 50%;
+        .image {
+          width: 100%;
+          height: 100%;
+
+          border-radius: 50%;
+          .popup-text {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+          }
+        }
+      }
+      &:before {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 2.2;
+
+        position: absolute;
+        z-index: 5;
+        top: 160px;
+        left: 0;
+
+        display: block;
+
+        width: 52px;
+        height: 52px;
+
+        content: '';
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #fff;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        background-color: #66e5e7;
+      }
+      &:nth-child(1) {
+        top: 177px;
+        left: 0;
+        &:before {
+          content: '1';
+        }
+      }
+      &:nth-child(2) {
+        top: 0;
+        left: 293px;
+        &:before {
+          content: '2';
+        }
+      }
+      &:nth-child(3) {
+        top: 22px;
+        left: 633px;
+        &:before {
+          content: '3';
+        }
+      }
+      &:nth-child(4) {
+        top: 190px;
+        left: 870px;
+        &:before {
+          content: '4';
+        }
+      }
+      &:nth-child(5) {
+        top: 580px;
+        left: 27px;
+        &:before {
+          content: '5';
+        }
+      }
+      &:nth-child(6) {
+        top: 790px;
+        left: 270px;
+        &:before {
+          content: '6';
+        }
+      }
+      &:nth-child(7) {
+        top: 780px;
+        left: 619px;
+        &:before {
+          content: '7';
+        }
+      }
+      &:nth-child(8) {
+        top: 616px;
+        left: 877px;
+        &:before {
+          content: '8';
+        }
+      }
+    }
+  }
+}
