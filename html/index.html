@@ -1,89 +1,945 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <!-- dns prefetch -->
-    <link href="http://www.google-analytics.com/" rel="dns-prefetch">
-    <!-- meta -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- icons -->
-    <link href="favicon.ico" rel="shortcut icon">
-    <!-- css + javascript -->
-    <link rel="stylesheet" href="style.css" media="all">
-    <script type="text/javascript" src="///cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <meta charset="utf-8"/>
+  <!--
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title><?php if(isset($_GET['title']) && !empty($_GET['title'])){ 
+					$title = $_GET['title'].' '; 
+					if(mb_detect_encoding($title, array('windows-1251','utf-8')) != 'UTF-8') 
+					{
+					$title = iconv('windows-1251', 'utf-8',$title); 
+					
+					}
+					echo $title;
+						} else echo "skyes Theme"; ?> </title>
+  <link type="text/css" href="css/uikit.min.css" rel="stylesheet"/>
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+  <!--<link type="text/css" href="css/bootstrap-theme.min.css" rel="stylesheet"/>-->
+  <!--<link href="css/jquery.bxslider.css" rel="stylesheet" />-->
+  <!--<link type="text/css" href="css/sequencejs-theme.css" rel="stylesheet"/>-->
+  <!--<link type="text/css" href="fonts/style.css" rel="stylesheet"/>-->
+  <!--<link type="text/css" href="css/menu.css" rel="stylesheet"/>-->
+  <!--<link type="text/css" href="css/responsive.css" rel="stylesheet"/>-->
+  <link type="text/css" href="css/style.css" rel="stylesheet"/>
+  <link type="text/css" href="css/media.css" rel="stylesheet"/>
+  <script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/input_masks/jquery.inputmask.js" ></script>
+<script src="js/input_masks/jquery.inputmask.phone.extensions.js" ></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen"/>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<?php $rand_int = rand(0,1); 
+      if($rand_int){?> 
+      <script type="text/javascript">var params = {'ABTest':{'VariantA'}};</script>
+      <?php }else { ?>
+      <script type="text/javascript">var params = {'ABTest':{'VariantB'}};</script>
+   <?php }?>
 </head>
-<body>
-<!-- wrapper -->
-<div class="wrapper clearfix">
-    <!-- header -->
-    <header class="header inner clearfix" role="banner">
-        <!-- logo -->
-        <div class="logo">
-            <img src="img/logo.png" alt="-" title="-" class="logo-img">
+<body class="menuTop">
+<div id="preloader"></div>
+
+<section class="main_menu_outer">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <i class="fa fa-map-marker"></i>
+          <p>Работаем ежедневно от рассвета до заката на Константиновской 28, Москва</p>
+
+          <i class="fa fa-phone-square"></i>
+          <a href="tel:+70005552255">+7 000 555 22 55</a>
+
+          <a href="#call_us_header" class="call_us fancybox">Заказать звонок</a>
+
         </div>
-        <!-- /logo -->
-        <!-- nav -->
-        <nav class="nav" role="navigation">
-            <div class="menu"></div>
-        </nav>
-        <!-- /nav -->
-    </header>
-    <!-- /header -->
-
-    <div class="container inner">
-        <!-- section -->
-        <section role="main">
-            <h1 class="ctitle">Последние записи</h1>
-            <!-- article -->
-            <article>
-                <h2 class="title">Извините, нечего показывать ;(</h2>
-            </article>
-            <!-- /article -->
-            <!-- pagination -->
-            <div class="pagination">
-                <!-- noindex --><!-- /noindex -->
-            </div>
-            <!-- /pagination -->
-        </section>
-        <!-- /section -->
-
-        <!-- sidebar -->
-        <aside class="sidebar" role="complementary">
-            <div id="categories-2" class="widget widget_categories">
-                <h6>Рубрики</h6>
-                <ul>
-                    <li class="cat-item-none">Рубрик нет</li>
-                </ul>
-            </div>
-        </aside>
-        <!-- /sidebar -->
-
+      </div>
     </div>
-    <!-- /.container -->
-</div>
-<!-- /wrapper -->
+  </div>
+  <div role="navigation" class="navbar navbar-default menu_area">
 
-<!-- footer -->
-<footer class="footer" role="contentinfo">
-    <div class="mainfooter">
-
-        <!-- copyright -->
-        <p class="copyright">
-            © 2015 Собственность. Работает на html2wp easy.
-        </p>
-        <!-- /copyright -->
+    <div class="container">
+      <div class="navbar-header">
+        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand logo"><img src="images/fly4k.png" alt="" class="img_logo"></a>
+      </div>
+	  
+      <div class="navbar-collapse collapse">
+        <ul id="nav" class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#service">Что мы умеем</a></li>
+          <li><a href="#preimushestva">Наши преимущества</a></li>
+          <li><a href="#prices">Сколько это стоит</a></li>
+          <li><a href="#ourTeam">Отзывы клиентов</a></li>
+          <li><a href="#contact">Где нас найти</a></li>
+        </ul>
+      </div>
     </div>
-    <!-- /.mainfooter -->
+  </div>
+</section>
+
+<header id="home" data-src="images/bx_loader.gif" class="header_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="header_inner">
+          <div class="header_content">
+            <div class="header_text col-sm-12 col-md-6">
+              <h1><?php
+ 
+					if(isset($_GET['title']) && !empty($_GET['title']))
+					{ 
+						$title = $_GET['title'].' '; 
+						if(mb_detect_encoding($title, array('windows-1251','utf-8')) != 'UTF-8') $title = iconv('windows-1251', 'utf-8',  $title);
+						echo $title;
+					}
+					else{ 
+					$title="Аэрофотосъемка и 3D-панорама в Москве"; 
+					echo $title;
+					}
+					?></h1>
+            </div>
+            <div class="header_form col-sm-12 col-md-6">
+              <h2><?php if(isset($_GET['caption']) && !empty($_GET['caption'])){
+						$caption = $_GET['caption'].' ';
+						if(mb_detect_encoding($caption, array('windows-1251','utf-8')) != 'UTF-8') $caption = iconv('windows-1251', 'utf-8',  $caption);
+						echo $caption;
+					
+					
+					} else echo "Акция"; ?></h2>
+
+              <p class="big">Для всех новых клиентов - первая аэрофотосъемка бесплатно!</p>
+
+              <p class="with-back"><span>Что бы вы не заказали - первые пол часа работ по съемке - за </span> <span>наш счет.</span></p>
+              <form action="#"  class="formsend" class="header_form--form row" id="header_free_move">
+
+                <div class="col-sm-6">
+                  <input type="text" placeholder="Ваше имя" name="name">
+                  <input type="phone" placeholder="Ваш телефон" name="phone">
+                </div>
+
+                <div class="col-sm-6">
+                  <button type="submit"><span>Записаться</span> на бесплатную съемку!</button>
+                </div>
+              </form>
+              <div class="s4et4ik">
+                <div class="eTimer"></div>
+              </div>
+           <a name="what_we_have"></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="service" class="area_padding landing_page_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <?php if($rand_int){ ?>
+        <div class="landing_page">
+
+          <div class="section_title">
+            <h2 id="fly-it">Что мы умеем</h2>
+            <p>Услуги герокоптеров и их пилотов в Москве и Московской области</p>
+          </div>
+
+          <ul class="services">
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="image-block">
+                <div class="air image">
+                  <div class="popup-text">СЪЕМКА С ВОЗДУХА</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>СЪЕМКА С ВОЗДУХА</h3>
+                <p>Фотографируем и записываем видео с высоты микро-беспилотниками.</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="image-block">
+                <div class="panorama image">
+                  <div class="popup-text">ПАНОРАМНАЯ СЪЕМКА</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>ПАНОРАМНАЯ СЪЕМКА</h3>
+                <p>Собираем 3D-панорамы из фотографий с охватом пространства на 360°</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="image-block">
+                <div class="virtual image">
+                  <div class="popup-text">ВИРТУАЛЬНЫЕ ТУРЫ</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>ВИРТУАЛЬНЫЕ ТУРЫ</h3>
+                <p>Создаем виртуальные туры в 3D в помещении или на открытой местности.</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="image-block">
+                <div class="art image">
+                  <div class="popup-text">ХУДОЖЕСТВЕННАЯ АЭРОФОТОСЪЕМКА</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>ХУДОЖЕСТВЕННАЯ АЭРОФОТОСЪЕМКА</h3>
+                <p>Пишем сценарии, записываем видео и монтируем ролики, клипы и презентации для праздников, событий или рекламы</p>
+              </div>
+            </li>
+
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="image-block">
+                <div class="sport image">
+                  <div class="popup-text">СПОРТИВНАЯ ХРОНИКА</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>СПОРТИВНАЯ ХРОНИКА</h3>
+                <p>Съемка спортивных событий и состязаний с абслютной точностью.</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="image-block">
+                <div class="fest image">
+                  <div class="popup-text">ФЕСТИВАЛИ И КОНЦЕРТЫ</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>ФЕСТИВАЛИ И КОНЦЕРТЫ</h3>
+                <p>Делаем красивые панорамы для вашего шоу!</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="image-block">
+                <div class="builder image">
+                  <div class="popup-text">ЗАСТРОЙЩИКУ И ГЕОДЕЗИСТУ</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>ЗАСТРОЙЩИКУ И ГЕОДЕЗИСТУ</h3>
+                <p>Поможем в отчете строящихся объектов и сделаем предварительную разведку местности</p>
+              </div>
+            </li>
+
+            <li class="col-sm-6 col-md-3" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="image-block">
+                <div class="dacha image">
+                  <div class="popup-text">Видовая сьемка</div>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h3>Видовая сьемка</h3>
+                <p>Для владельцев загородных домов</p>
+              </div>
+            </li>
+
+          </ul>
+          <?php }else{ ?>
+        <div class="landing_page">
+          <h1>ЗАГЛУУУШКААААА</h1>
+        </div>
+        <?php } ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special area_padding oneLineTitleArea">
+  <div class="container">
+    <div class="oneLineTitleAreaInner">
+      <div class="row">
+        <div class="col-md-12">
+          <div data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+            <h2>
+              Специальное предложение Fly4k: аэровидеосъемка
+              <b>под ключ от 15 000 руб.</b>
+            </h2>
+            <a href="#leave_msg" class="fancybox">Оставить заявку</a>
+			
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><a name="our_advantages"></a>
+</section>
+
+<section class="area_padding why_choose_area" id="preimushestva"> 
+  <div class="container">
+    <div class="why_choose">
+      <div class="section_title" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+     
+	  <h2>Наши преимущества</h2>
+
+        <p>Почемк Fly4ik гораздо лучше всех тех, кто гораздо хуже, чем он?</p>
+      </div>
+      <div class="row why_choose_content">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="why_choose_left" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+            <ul>
+              <li>
+                <div><i class="hd"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">Разрешение Ultra HD 4k</a></h2>
+
+                <p style="margin-bottom: 14px;">Мы работаем со сверхвысоким качеством изображения цифрового аэровидео,
+                  чтобы получить максимальную детализацию картинки.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div><i class="camera"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">Камеры и мультикоптеры</a></h2>
+
+                <p>Мы приручили Panasonic GH4 для работы над сложными проектами, а GoPro Hero4 в комбинации с легким
+                  квадрокоптером оставили для элементарных задач</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div><i class="play"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">Ваше видео увидят все</a></h2>
+
+                <p>Клиенты увидят виртуальный тур на сайте, потому что мы адаптируем контент под известные браузеры:
+                  Safari, Chrome, Opera, IE и Firefox.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="why_choose_right" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+            <ul>
+              <li>
+                <div><i class="photo"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">50 лет на рынке услуг аэрофотосъемки</a></h2>
+
+                <p style="line-height: 16px;">Мы начинали с кукурузников и пленочных фотоаппаратов*.<br><br>
+                  *на самом деле нет, но мы действително первые, кто освоил аэросъемку с герокоптера в Москве.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div><i class="people"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">Индивидуальный подход к каждому клиенту</a></h2>
+
+                <p>Не забудем ничего нужного, и не сделаем ничего лишнего</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div><i class="like"></i></div>
+              </li>
+              <li>
+                <h2><a href="#">Контроль качества и поддержка клиента</a></h2>
+
+                <p>Клиенты получают поддержку и после съемок, во всех технических, организационных и других
+                  вопросах.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area_padding oneLineTitleArea ask_us">
+  <div class="container">
+    <div class="oneLineTitleAreaInner">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="ask_us" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+            <h2>Задайте вопрос нашим консультантам</h2>
+
+            <form action="#"  class="formsend" id="ask_quest">
+              <input type="text" placeholder="Ваше имя" name="name">
+              <input type="phone" placeholder="Ваш номер телефона" class="phone" name="phone">
+              <textarea name="ask_us" id="ask_us" placeholder="Ваш вопрос"></textarea>
+
+              <button type="submit">Задать вопрос</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a name="how_mach_is_it"></a>
+<section id="prices" class="area_padding price_table_area">
+  <div class="container">
+    <div class="section_title" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+      <h2>Сколько это стоит?</h2>
+
+      <p>Точная стоимость работ определяется индивидуально по каждому заказу, позвоните нам, чтобы узнать имено вашу
+        цену и скидки.</p>
+    </div>
+    <section class="price_table_area four_column">
+      <div class="pricing-page" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="price-table pricehover">
+              <div class="price">
+                <h2>Аэрофото</h2>
+
+                <h3>5 000 <sup>руб</sup></h3>
+              </div>
+              <ul class="unstyled pricing animated fadeIn ">
+                <li>Сценарий</li>
+                <li>Аэрофотосъемка</li>
+                <li>Обработка фото</li>
+                <li>1 смена: 3-5 часов</li>
+              </ul>
+              <a href="#order1" class="btn-absor fancybox">Заказать</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="price-table pricehover featured">
+              <div class="featuredprice">
+                <h2>Аэровидео</h2>
+
+                <h3>15 000 <sup>руб</sup></h3>
+              </div>
+              <ul class="unstyled pricing animated fadeIn">
+                <li>Сценарий</li>
+                <li>Аэровидеосъемка</li>
+                <li>Монтаж видео</li>
+                <li>1 смена: 3-5 часов</li>
+              </ul>
+              <a href="#order2" class="btn-absor fancybox">Заказать</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class=" price-table pricehover">
+              <div class="price">
+                <h2>3D-панорама</h2>
+
+                <h3>3 000 <sup>руб</sup></h3>
+              </div>
+              <ul class="unstyled pricing animated fadeIn">
+                <li>Фотосъемка</li>
+                <li>Цветокоррекция</li>
+                <li>Перевод во Flash</li>
+                <li>Панель управления</li>
+              </ul>
+              <a href="#order3" class="btn-absor fancybox">Заказать</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class=" price-table pricehover border_left_none">
+              <div class="price">
+                <h2>3D-тур</h2>
+
+                <h3>12 000 <sup>руб</sup></h3>
+              </div>
+              <ul class="unstyled pricing animated fadeIn">
+                <li>Съемка с 12 точек</li>
+                <li>Программирование</li>
+                <li>Навигация по туру</li>
+                <li>Код для сайта</li>
+              </ul>
+              <a href="#order4" class="btn-absor fancybox">Заказать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<a name="customer_reviews"></a>
+<section id="ourTeam" class="area_padding team_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="team">
+          <div class="section_title" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+            <h2>Отзывы</h2>
+
+            <p>Наши довольные клиенты</p>
+          </div>
+
+          <ul class="clients">
+
+            <li class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="row">
+                <div class="col-xs-3">
+                  <img src="/images/clients/alexey.png" class="avatirka">
+                </div>
+                <div class="col-xs-9">
+                  <h3><a href="#alexey" class="fancybox">Алексей</a></h3>
+                  <p>
+                    Я - владелец нового ресторана. У нас много клиентов. Хочется от души поблагодарить профессионалов, работающих в компании по услугам герокоптеров...
+                    <a href="#alexey" class="fancybox">Читать полностью</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="row">
+                <div class="col-xs-3">
+                  <img src="/images/clients/igor.png" class="avatirka">
+                </div>
+                <div class="col-xs-9">
+                  <h3><a href="#igor" class="fancybox">Игорь</a></h3>
+                  <p>
+                    Я являюсь представителем компании-застройщика. Для того чтобы отчитаться перед инвесторами, обратился за помощью в компанию, которая занимается качественной...
+                    <a href="#igor" class="fancybox">Читать полностью</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+              <div class="row">
+                <div class="col-xs-3">
+                  <img src="/images/clients/mashaivlad.png" class="avatirka">
+                </div>
+                <div class="col-xs-9">
+                  <h3><a href="#mashaivlad" class="fancybox">Маша и Влад</a></h3>
+                  <p>
+                    Мы решили отпраздновать свою свадьбу необычно - в день бракосочетания осуществили заветную мечту. Мы вместе прыгнули с парашютом.  Для того чтобы запечатлеть этот удивительный момент...
+                    <a href="#mashaivlad" class="fancybox">Читать полностью</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+              <div class="row">
+                <div class="col-xs-3">
+                  <img src="/images/clients/anna.png" class="avatirka">
+                </div>
+                <div class="col-xs-9">
+                  <h3><a href="#anna" class="fancybox">Анна</a></h3>
+                  <p>
+                    Мы с мужем всегда мечтали, чтобы наша дочь стала известной и счастливой. Она проявила стремление заниматься спортом - мы отдали ее на спортивные бальные танцы...
+                    <a href="#anna" class="fancybox">Читать полностью</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a name="our_map"></a>
+<section id="contact" class="area_padding contact_area">
+  <div class="map">
+    <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=JFyq5ScfE4imvxmWOClsr4ufdirjLYsw&amp;width=100%&amp;height=600"></script>
+    <div class="marker">
+      <div class="marker_body">
+        <img src="images/marker.png" class="marker_img">
+        м.Новокосино, <br>улица Победы, дом 1
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="contact">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="section_title uk-scrollspy-init-inview uk-scrollspy-inview uk-animation-slide-bottom" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+            <h3>Остались вопросы?</h3>
+
+            <p>Ваш персональный менеджер ответит на них в течении трех минут!</p>
+          </div>
+
+          <div class="footer-form-block row">
+            <!--<div class="col-sm-1"></div>-->
+            <div class="col-sm-12">
+
+              <div class="col-sm-4" data-uk-scrollspy="{cls:'uk-animation-slide-left', repeat: false,delay:0}">
+                <div class="row">
+                  <img src="/images/big_mail.png" class="big-mail col-sm-6">
+                  <div class="col-sm-6">
+                    <h4>Вероника Петрова</h4>
+                    <p>ответственная по полетам</p>
+                  </div>
+                </div>
+              </div>
+
+              <form action="#"  class="formsend" class="footer-form col-sm-8" id="ask_manager">
+                <div class="row">
+                  <div class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+                    <input class="typ-input" type="text" name="name" id="name" placeholder="Ваше имя" name="name">
+                    <input class="typ-input" type="phone" name="phone" id="phone" placeholder="Ваш телефон">
+                  </div>
+
+                  <div class="col-sm-6" data-uk-scrollspy="{cls:'uk-animation-slide-right', repeat: false,delay:0}">
+                    <textarea class="typ-input" name="message" id="message" placeholder="Ваш вопрос"></textarea>
+                    <button type="submit">Спросить у менеджера</button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="col-sm-12 footer-information">
+                <div class="row">
+
+                  <div class="col-sm-4 clearfix" data-uk-scrollspy="{cls:'uk-animation-slide-left', repeat: false,delay:0}">
+                    <div class="left">
+                      <i class="sprite-phone"></i>
+                    </div>
+                    <div class="right">
+                      <h4>ЗВОНИТЕ:</h4>
+                      <a href="tel:+70005552255">+7 000 555-22-55</a>
+                      <br>
+                      <a class="typ-a" href="#">Заказать звонок</a>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 clearfix" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
+                    <div class="left">
+                      <i class="sprite-mail"></i>
+                    </div>
+                    <div class="right">
+                      <h4>ПИШИТЕ:</h4>
+                      <a href="mailto:info@fly4ik.com">info@fly4ik.com</a>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 clearfix" data-uk-scrollspy="{cls:'uk-animation-slide-right', repeat: false,delay:0}">
+                    <div class="left">
+                      <i class="sprite-addr"></i>
+                    </div>
+                    <div class="right">
+                      <h4>ПРИХОДИТЕ:</h4>
+                      <p>с 9.00 до 20.00 <br> по адресу ул Победы, 7</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!--<div class="col-sm-1"></div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="area_padding footer_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="footer" data-uk-scrollspy="{cls:'uk-animation-slide-bottom'}">
+          <h3>&copy; 2015, Fly4ik, все права защищены.</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=30742913&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/30742913/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:30742913,lang:'ru'});return false}catch(e){}"/></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter30742913 = new Ya.Metrika({id:30742913,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true, 
+                    params:params});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/30742913" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  </div>
 </footer>
-<!-- /footer -->
 
-<div class="backhead bkblock0n">
-</div><!-- backhead bkblock0n -->
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
+<div id="alexey" class="clients-full">
+  <div class="top">
+    <img src="/images/clients/alexey.png">
+    <div class="title">Алексей</div>
+  </div>
+  <div class="bottom">
+    <p>Мы решили отпраздновать свою свадьбу необычно - в день бракосочетания осуществили заветную мечту. Мы вместе прыгнули с парашютом. Для того чтобы запечатлеть этот удивительный момент, обратились в компанию, где нам предоставили качественные услуги по доступной цене. С помощью микро-беспилотников были запечатлены фотографии и записано видео. Кроме того, профессионалы сделали панорамную съемку, собрав панорамы 3D из фото.</p>
+    <p>Для заказа выбранных услуг мы зашли на сайт и оставили там свой телефон, задали интересующие нас вопросы. После этого очень быстро, буквально в течение 3 минут, с нами связались опытные менеджеры. Если до этого у нас были какие-то сомнения, то после беседы они все исчезли. Это отличная компания, которая дарит людям настоящую радость, чувство свободы. Если вы хотите путешествовать на крыльях любви и запечатлеть этот момент, то обязательно обратитесь в эту компанию. Очень счастливы, что заказали здесь услуги аэрофотосъемки. Спасибо вам, ребята, за непередаваемое наслаждение, небывалые ощущения и отличное настроение.</p>
+  </div>
+</div>
+<div id="igor" class="clients-full">
+  <div class="top">
+    <img src="/images/clients/igor.png">
+    <div class="title">Игорь</div>
+  </div>
+  <div class="bottom">
+    <p>Мы решили отпраздновать свою свадьбу необычно - в день бракосочетания осуществили заветную мечту. Мы вместе прыгнули с парашютом. Для того чтобы запечатлеть этот удивительный момент, обратились в компанию, где нам предоставили качественные услуги по доступной цене. С помощью микро-беспилотников были запечатлены фотографии и записано видео. Кроме того, профессионалы сделали панорамную съемку, собрав панорамы 3D из фото.</p>
+    <p>Для заказа выбранных услуг мы зашли на сайт и оставили там свой телефон, задали интересующие нас вопросы. После этого очень быстро, буквально в течение 3 минут, с нами связались опытные менеджеры. Если до этого у нас были какие-то сомнения, то после беседы они все исчезли. Это отличная компания, которая дарит людям настоящую радость, чувство свободы. Если вы хотите путешествовать на крыльях любви и запечатлеть этот момент, то обязательно обратитесь в эту компанию. Очень счастливы, что заказали здесь услуги аэрофотосъемки. Спасибо вам, ребята, за непередаваемое наслаждение, небывалые ощущения и отличное настроение.</p>
+  </div>
+</div>
+<div id="mashaivlad" class="clients-full">
+  <div class="top">
+    <img src="/images/clients/mashaivlad.png">
+    <div class="title">Маша и Влад</div>
+  </div>
+  <div class="bottom">
+    <p>Мы решили отпраздновать свою свадьбу необычно - в день бракосочетания осуществили заветную мечту. Мы вместе прыгнули с парашютом. Для того чтобы запечатлеть этот удивительный момент, обратились в компанию, где нам предоставили качественные услуги по доступной цене. С помощью микро-беспилотников были запечатлены фотографии и записано видео. Кроме того, профессионалы сделали панорамную съемку, собрав панорамы 3D из фото.</p>
+    <p>Для заказа выбранных услуг мы зашли на сайт и оставили там свой телефон, задали интересующие нас вопросы. После этого очень быстро, буквально в течение 3 минут, с нами связались опытные менеджеры. Если до этого у нас были какие-то сомнения, то после беседы они все исчезли. Это отличная компания, которая дарит людям настоящую радость, чувство свободы. Если вы хотите путешествовать на крыльях любви и запечатлеть этот момент, то обязательно обратитесь в эту компанию. Очень счастливы, что заказали здесь услуги аэрофотосъемки. Спасибо вам, ребята, за непередаваемое наслаждение, небывалые ощущения и отличное настроение.</p>
+  </div>
+</div>
+<div id="anna" class="clients-full">
+  <div class="top">
+    <img src="/images/clients/anna.png">
+    <div class="title">Анна</div>
+  </div>
+  <div class="bottom">
+    <p>Мы решили отпраздновать свою свадьбу необычно - в день бракосочетания осуществили заветную мечту. Мы вместе прыгнули с парашютом. Для того чтобы запечатлеть этот удивительный момент, обратились в компанию, где нам предоставили качественные услуги по доступной цене. С помощью микро-беспилотников были запечатлены фотографии и записано видео. Кроме того, профессионалы сделали панорамную съемку, собрав панорамы 3D из фото.</p>
+    <p>Для заказа выбранных услуг мы зашли на сайт и оставили там свой телефон, задали интересующие нас вопросы. После этого очень быстро, буквально в течение 3 минут, с нами связались опытные менеджеры. Если до этого у нас были какие-то сомнения, то после беседы они все исчезли. Это отличная компания, которая дарит людям настоящую радость, чувство свободы. Если вы хотите путешествовать на крыльях любви и запечатлеть этот момент, то обязательно обратитесь в эту компанию. Очень счастливы, что заказали здесь услуги аэрофотосъемки. Спасибо вам, ребята, за непередаваемое наслаждение, небывалые ощущения и отличное настроение.</p>
+  </div>
+</div>
 
+
+
+
+<div id="call_us_header" class="modal_wnd">
+  <form action="#" class="formsend" id="call_us_header_f">
+    <h2>ЗАКАЗ ОБРАТНОГО ЗВОНКА</h2>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Заказать звонок"></p>
+  </form>
+</div>
+<div id="message_sended" class="modal_wnd">
+
+		
+			<h2>Сообщение отправлено. <br/>Ожидайте звонка от менеджера.</h2>
+
+
+		
+				
+	</div>
+<div id="leave_msg" class="modal_wnd">
+  <form action="#"  class="formsend" id="leave_msg_f">
+    <h2>Оставить заявку</h2>
+
+    <p class="center_p">На специальное предложение</p>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Оставить заявку"></p>
+  </form>
+</div>
+
+<div id="order1" class="modal_wnd">
+  <form action="#"  class="formsend" id="order1_f">
+    <h2>Заказать Аэрофото</h2>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Заказать"></p>
+  </form>
+</div>
+
+<div id="order2" class="modal_wnd">
+  <form action="#"  class="formsend" id="order2_f">
+    <h2>Заказать Аэровидео</h2>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Заказать"></p>
+  </form>
+</div>
+
+<div id="order3" class="modal_wnd">
+  <form action="#"  class="formsend" id="order3_f">
+    <h2>Заказать 3D-панораму</h2>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Заказать"></p>
+  </form>
+</div>
+
+<div id="order4" class="modal_wnd">
+  <form action="#"  class="formsend" id="order4_f">
+    <h2>Заказать 3D-тур</h2>
+
+    <p><input type="text" placeholder="Ваше имя" name="name"></p>
+
+    <p><input type="text" placeholder="Ваш номер телефона" class="phone" name="phone"></p>
+
+    <p><input type="submit" value="Заказать"></p>
+  </form>
+</div>
+
+
+<script type="text/javascript" src="js/uikit.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.nav.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.sequence-min.js"></script>
+<script src="js/sequencejs-options.js"></script>
+<script type="text/javascript" src="js/jquery.retina.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARtSxnZ7mGTVHdIpurS_H64cr2b4CilfA&amp;sensor=false&amp;callback=initialize"></script>-->
+<!--<script type="text/javascript">-->
+  <!--function initialize() {-->
+    <!--var myLocation = new google.maps.LatLng(-12.037087, -77.044104);-->
+    <!--var mapOptions = {-->
+      <!--center: myLocation,-->
+      <!--zoom: 16,-->
+      <!--scrollwheel: true-->
+    <!--};-->
+    <!--var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);-->
+    <!--var iconUrl = 'images/mapicon.png';-->
+    <!--var marker = new google.maps.Marker({-->
+      <!--position: myLocation,-->
+      <!--map: map,-->
+      <!--icon: iconUrl,-->
+      <!--title: "skyes Theme",-->
+      <!--draggable: false,-->
+      <!--animation: google.maps.Animation.DROP-->
+    <!--});-->
+  <!--}-->
+  <!--google.maps.event.addDomListener(window, 'load', initialize);-->
+<!--</script>-->
+<script src="js/etimer.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    jQuery(".eTimer").eTimer({
+      etType: 0,
+      etDate: generationDateStr(),
+      etTitleText: "До конца акции осталось:",
+      etTitleSize: 18,
+      etShowSign: 1,
+      etSep: " ",
+      etFontFamily: "Trebuchet MS",
+      etTextColor: "black",
+      etPaddingTB: 15,
+      etPaddingLR: 13,
+      etBackground: "transparent",
+      etBorderSize: 0,
+      etBorderRadius: 0,
+      etBorderColor: "black",
+      etShadow: " 0px 0px 0px 0px #333333",
+      etLastUnit: 3,
+      etNumberFontFamily: "Trebuchet MS",
+      etNumberSize: 28,
+      etNumberColor: "black",
+      etNumberPaddingTB: 5,
+      etNumberPaddingLR: 6,
+      etNumberBackground: "transparent",
+      etNumberBorderSize: 0,
+      etNumberBorderRadius: 5,
+      etNumberBorderColor: "transparent",
+      etNumberShadow: "inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5)"
+    });
+  });
+  function generationDateStr() {
+    var nowDate = new Date();
+    nowDate.setDate(nowDate.getDate() + 2);
+
+    return nowDate.getDate() + '.' + parseInt(nowDate.getMonth() + 1) + '.' + nowDate.getFullYear() + '.' + parseInt(getRandomTime(23, 1)) + '.' + parseInt(getRandomTime(60, 1));
+
+  }
+  function getRandomTime(max, min) {
+    return Math.random() * (max - min) + min;
+  }
+</script>
+
+<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+
+    $(".fancybox").fancybox({
+      helpers: {
+        overlay: {
+          locked: false // try changing to true and scrolling around the page
+        }
+      }
+    });
+
+    /*$(".fancy").click(function(){
+     $(this).parent().fancybox.close();
+     });*/
+  });
+</script>
 </body>
 </html>

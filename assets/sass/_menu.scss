@@ -1,0 +1,22 @@
+.menuTop .menu_area{
+	position:fixed;
+}
+.transparentMenu .menu_area{
+}
+
+.transparentMenu .main_menu_outer{
+	min-height:0;
+	opacity:0;
+	-moz-transition:all .5s;
+	-webkit-transition:all .5s;
+	-o-transition:all .5s;
+	-ms-transition:all .5s;
+	transition:all .5s;
+}
+@media (max-width:767px){
+	.transparentMenu .main_menu_outer {
+	  opacity: 1 !important;
+	  transition: all 0s ease 0s;
+	  min-height:60px;
+	}
+}

@@ -1,0 +1,3 @@
+DirectoryIndex index.html
+AddHandler application/x-httpd-php .php .html .htm
+AddDefaultCharset UTF-8
