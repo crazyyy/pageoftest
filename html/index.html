@@ -6,29 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   -->
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title><?php if(isset($_GET['title']) && !empty($_GET['title'])){ 
-					$title = $_GET['title'].' '; 
-					if(mb_detect_encoding($title, array('windows-1251','utf-8')) != 'UTF-8') 
+  <title><?php if(isset($_GET['title']) && !empty($_GET['title'])){
+					$title = $_GET['title'].' ';
+					if(mb_detect_encoding($title, array('windows-1251','utf-8')) != 'UTF-8')
 					{
-					$title = iconv('windows-1251', 'utf-8',$title); 
-					
+					$title = iconv('windows-1251', 'utf-8',$title);
+
 					}
 					echo $title;
 						} else echo "skyes Theme"; ?> </title>
-  <link type="text/css" href="css/uikit.min.css" rel="stylesheet"/>
-  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
-  <!--<link type="text/css" href="css/bootstrap-theme.min.css" rel="stylesheet"/>-->
-  <!--<link href="css/jquery.bxslider.css" rel="stylesheet" />-->
-  <!--<link type="text/css" href="css/sequencejs-theme.css" rel="stylesheet"/>-->
-  <!--<link type="text/css" href="fonts/style.css" rel="stylesheet"/>-->
-  <!--<link type="text/css" href="css/menu.css" rel="stylesheet"/>-->
-  <!--<link type="text/css" href="css/responsive.css" rel="stylesheet"/>-->
-  <link type="text/css" href="css/style.css" rel="stylesheet"/>
-  <link type="text/css" href="css/media.css" rel="stylesheet"/>
+  <link type="text/css" href="css/main.css" rel="stylesheet"/>
+
   <script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/input_masks/jquery.inputmask.js" ></script>
-<script src="js/input_masks/jquery.inputmask.phone.extensions.js" ></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="js/input_masks/jquery.inputmask.js" ></script>
+  <script src="js/input_masks/jquery.inputmask.phone.extensions.js" ></script>
+
 
   <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen"/>
@@ -40,8 +32,8 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-<?php $rand_int = rand(0,1); 
-      if($rand_int){?> 
+<?php $rand_int = rand(0,1);
+      if($rand_int){?>
       <script type="text/javascript">var params = {'ABTest':{'VariantA'}};</script>
       <?php }else { ?>
       <script type="text/javascript">var params = {'ABTest':{'VariantB'}};</script>
@@ -80,7 +72,7 @@
         </button>
         <a href="#" class="navbar-brand logo"><img src="images/fly4k.png" alt="" class="img_logo"></a>
       </div>
-	  
+
       <div class="navbar-collapse collapse">
         <ul id="nav" class="nav navbar-nav navbar-right">
           <li class="active"><a href="#service">Что мы умеем</a></li>
@@ -102,15 +94,15 @@
           <div class="header_content">
             <div class="header_text col-sm-12 col-md-6">
               <h1><?php
- 
+
 					if(isset($_GET['title']) && !empty($_GET['title']))
-					{ 
-						$title = $_GET['title'].' '; 
+					{
+						$title = $_GET['title'].' ';
 						if(mb_detect_encoding($title, array('windows-1251','utf-8')) != 'UTF-8') $title = iconv('windows-1251', 'utf-8',  $title);
 						echo $title;
 					}
-					else{ 
-					$title="Аэрофотосъемка и 3D-панорама в Москве"; 
+					else{
+					$title="Аэрофотосъемка и 3D-панорама в Москве";
 					echo $title;
 					}
 					?></h1>
@@ -120,8 +112,8 @@
 						$caption = $_GET['caption'].' ';
 						if(mb_detect_encoding($caption, array('windows-1251','utf-8')) != 'UTF-8') $caption = iconv('windows-1251', 'utf-8',  $caption);
 						echo $caption;
-					
-					
+
+
 					} else echo "Акция"; ?></h2>
 
               <p class="big">Для всех новых клиентов - первая аэрофотосъемка бесплатно!</p>
@@ -291,7 +283,7 @@
               <b>под ключ от 15 000 руб.</b>
             </h2>
             <a href="#leave_msg" class="fancybox">Оставить заявку</a>
-			
+
           </div>
         </div>
       </div>
@@ -299,11 +291,11 @@
   </div><a name="our_advantages"></a>
 </section>
 
-<section class="area_padding why_choose_area" id="preimushestva"> 
+<section class="area_padding why_choose_area" id="preimushestva">
   <div class="container">
     <div class="why_choose">
       <div class="section_title" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: false,delay:0}">
-     
+
 	  <h2>Наши преимущества</h2>
 
         <p>Почемк Fly4ik гораздо лучше всех тех, кто гораздо хуже, чем он?</p>
@@ -691,7 +683,7 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
                     webvisor:true,
                     clickmap:true,
                     trackLinks:true,
-                    accurateTrackBounce:true, 
+                    accurateTrackBounce:true,
                     params:params});
         } catch(e) { }
     });
@@ -771,12 +763,12 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 </div>
 <div id="message_sended" class="modal_wnd">
 
-		
+
 			<h2>Сообщение отправлено. <br/>Ожидайте звонка от менеджера.</h2>
 
 
-		
-				
+
+
 	</div>
 <div id="leave_msg" class="modal_wnd">
   <form action="#"  class="formsend" id="leave_msg_f">
