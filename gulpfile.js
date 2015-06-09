@@ -156,22 +156,15 @@ gulp.task('styles', function () {
 
 
 gulp.task('serve', ['sprite', 'image', 'scripts', 'styles', 'fonts'], function () {
-  if (htmlOWp === true) {
-    browserSync({
-      notify: false,
-      port: 9000,
-      server: {
-        baseDir: basePaths.dest,
-      }
-    });
-  } else {
-    browserSync({
-      notify: false,
-      proxy: wpDomain,
-      host: wpDomain,
-      port: 8080
-    });
-  }
+  browserSync({
+    notify: false,
+    proxy: pageoftest.ru,
+    host: pageoftest.ru,
+    port: 8080,
+    server: {
+      baseDir: basePaths.dest,
+    }
+  });
 
   // watch for changes
   gulp.watch([
