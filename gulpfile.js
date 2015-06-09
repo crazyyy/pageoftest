@@ -115,17 +115,7 @@ gulp.task('sprite', function () {
     ))
     .pipe(gulp.dest(paths.images.dest))
     .pipe(plugins.size({showFiles: true}))
-    .pipe(plugins.webp())
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(plugins.size({showFiles: true}));
   spriteData.css.pipe(gulp.dest(paths.styles.src));
-});
-
-gulp.task('webp', function () {
-  return gulp.src([paths.images.src + '**/*.png', paths.images.src + '**/*.jpg', paths.images.src + '**/*.jpeg', paths.images.src + '**/*.gif'])
-    .pipe(plugins.webp())
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(plugins.size({showFiles: true}));
 });
 
 // Optimize script
@@ -172,7 +162,7 @@ gulp.task('serve', ['sprite', 'image', 'scripts', 'styles', 'fonts'], function (
   ]).on('change', reload);
 
   gulp.watch(paths.sprite.src, ['sprite', 'image', 'styles', reload]);
-  gulp.watch(paths.images.src, ['image', 'webp', reload]);
+  gulp.watch(paths.images.src, ['image', reload]);
   gulp.watch(appFiles.styles, ['styles', reload]);
   gulp.watch(paths.sprite.src, ['styles', reload]);
   gulp.watch(paths.fonts.src, ['fonts', reload]);
